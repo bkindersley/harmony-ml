@@ -1,0 +1,30 @@
+FFT ->
+---------------------------
+export PYTHONPATH=$PYTHONPATH:/home/bria/sfuhome/pythonlib
+pip install --target=pythonlib mutagen
+---------------------------
+Hidden Markov Model
+
+x_n : observable (harmony?)
+z_n: unobservable (melody?)
+
+sensor =>
+p(x_t| z_t,...,z_1,x_{t-1},...,x_1) = p(x_t|z_t)
+
+p(z_t|z_{t-1},...,z_1) = p(z_t | z_{t-1},...,z_{t-i})
+stationary process => fixed for all t
+
+---------------------------
+Markov Chain
+
+state: (melody note, harmony note)
+=> 12 X 12 possible states
+
+song: walk through a selection of states
+
+training: determine probabilities of moving between states
+
+generation: given melody {m_i}(i=0..7) (+ starting harmony note? h_0)
+  -> initial state (m_0, h_0)
+  -> among transitions from (m_0, h_0) ~> (m_1, *), follow probability + randomness
+--------------------------------------------

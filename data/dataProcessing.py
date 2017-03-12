@@ -38,8 +38,12 @@ def processScore(s):
         i = i+1
         #if have a chord (no rest)
         if (len(ch) == 2):
-            x.append("{0}".format(ch.pitches[0].midi))
-            t.append("{0}".format(ch.pitches[1].midi))
+            p = ch.pitches[0]
+            p.octave = 4
+            x.append("{0}".format(p))
+            p = ch.pitches[1]
+            p.octave = 4
+            t.append("{0}".format(p))
     f.close()
 
 i = 0

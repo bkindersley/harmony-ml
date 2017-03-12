@@ -40,10 +40,10 @@ def processScore(s):
         if (len(ch) == 2):
             p = ch.pitches[0]
             p.octave = 4
-            x.append("{0}".format(p))
+            x.append("{0}".format(p.midi - 60))
             p = ch.pitches[1]
             p.octave = 4
-            t.append("{0}".format(p))
+            t.append("{0}".format(p.midi - 60))
     f.close()
 
 i = 0
